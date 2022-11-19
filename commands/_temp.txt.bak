@@ -1,0 +1,27 @@
+kubectl api-resources
+kubectl api-resources | less (for search)
+
+kubectl apply -f do.yml (create pod)
+
+ kubectl get pod -o wide
+
+
+kubectl get pod
+
+kubectl explain pod | less
+kubectl explain pod.spec | less
+kubectl explain pod.spec.containers | less
+
+kubectl describe pod <<name>>
+
+kubectl get pod pod4 -o yaml
+
+kubectl run --image=nginx <<name>> --dry-run -o yaml > new-pod.yml
+
+
+-------
+kubectl exec -it <<POD-NAME>> bash
+exit
+------
+kubectl get endpoints
+kubectl get pod -o wide | grep 11.250.202.76

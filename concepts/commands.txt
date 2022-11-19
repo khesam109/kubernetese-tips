@@ -1,0 +1,4 @@
+kubectl api-resources
+kubectl api-resources | less
+kubectl apply -f <<file-name>>
+kubectl explain <<component-name>> | less --> (kubectl explain pod, kubectl explain pod.spec, kubectl explain pod.spec.containers)
