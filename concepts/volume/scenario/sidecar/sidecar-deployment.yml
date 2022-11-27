@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: sidecar-scenario
+    labels:
+        scenario: sidecar
+spec:
+    replicas: 1
+    template:
+        metadata:
+            name: pod
+            labels:
+                app: test
+        spec:
+            volumes:
+                - name: varlog
+                  emptyDir: {}
+            containers:
+                - name: nginx
+                  image: nginx
+                  volumeMounts:
+                      - name: varlog
+                        mountPath: /nginx
+                - name: busybox
+                  image: busybox:1.28
+                  volumeMounts:
+                      - name: varlog
+                        mountPath: /busybox
+                  command:
+                      - sleep
+                      - "50000"
+    selector:
+        matchLabels:
+           app: test 

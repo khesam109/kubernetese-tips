@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Pod
+metadata:
+    name: volume-host-path
+    labels:
+        app: test
+spec:
+    volumes:
+        - name: mydata
+          hostPath:
+            path: /data  
+    containers:
+        - name: nginx
+          image: nginx
+          volumeMounts:
+              - name: mydata
+                mountPath: /usr/share/nginx/html
+           
