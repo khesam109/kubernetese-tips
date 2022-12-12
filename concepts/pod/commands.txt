@@ -3,4 +3,4 @@ kubectl get pod -o wide
 kubectl get pod -o wide | grep <<to-be-search>>
 kubectl describe pod <<pod-name>>
 kubectl get pod <<pod-name>> -o yaml
-kubectl exec -it <<pod-name>> bash || kubectl exec -it <<pod-name>> sh
+kubectl exec -it <<pod-name>> -- bash || kubectl exec -it <<pod-name>> -- sh

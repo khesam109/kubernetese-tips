@@ -1,0 +1,12 @@
+apiVersion: v1
+data:
+  index.html: salam
+  default.conf: "server \n        {\n        listen       9090;\n        listen  [::]:9090;\n
+    \       server_name  localhost;\n        location / {\n          root   /usr/share/nginx/html;\n
+    \         index  index.html index.htm;\n        }\n        error_page   500 502
+    503 504  /50x.html;\n        location = /50x.html {\n          root   /usr/share/nginx/html;\n
+    \       }\n        }"
+kind: ConfigMap
+metadata:
+  creationTimestamp: null
+  name: multi-value-config-map

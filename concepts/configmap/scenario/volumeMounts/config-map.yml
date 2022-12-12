@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+    name: volume-mounts-config-map
+data:
+    index.html:
+        Salam

@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Pod
+metadata:
+    name: second-mysql
+    labels:
+        app: msql
+spec:
+    containers:
+        - name: mysql
+          image: mysql
+          env:
+              - name: DATABASE_CONNECTION
+                valueFrom:
+                    configMapKeyRef:
+                        name: env-config-map
+                        key: DATABASE
+              - name: DATABASE_PORT
+                valueFrom:
+                    configMapKeyRef:
+                        name: env-config-map
+                        key: DATABAS_PORT
+              - name: MYSQL_ROOT_PASSWORD
+                value: Hh@123456789

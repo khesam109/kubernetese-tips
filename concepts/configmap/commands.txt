@@ -1,0 +1,3 @@
+ create configMap from files by commands:
+ 
+ kubectl create cm <<CONFIGMAP_NAME>> --from-file=<<SOURCE_FILE_NAME>> --from-file=<<SOURCE_FILE_NAME>> -o yaml --dry-run > <<TARGET_FILE_NAME>>.yml
